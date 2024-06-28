@@ -19,7 +19,7 @@ defmodule Squircle.MixProject do
         # The main page in the docs
         main: "Squircle",
         logo: "./assets/logo.png",
-        assets: %{"etc/assets" => "assets"},
+        assets: %{"assets" => "assets"},
         extras: ["README.md"]
       ]
     ]
