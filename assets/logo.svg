@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   shape-rendering="crispEdges"
+   viewBox="0 0 100 100"
+   height="100"
+   width="100"
+   version="1.2"
+   id="svg13"
+   sodipodi:docname="logo.svg"
+   inkscape:version="1.2.2 (b0a8486541, 2022-12-01)"
+   inkscape:export-filename="logo.png"
+   inkscape:export-xdpi="288"
+   inkscape:export-ydpi="288"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview15"
+     pagecolor="#ffffff"
+     bordercolor="#000000"
+     borderopacity="0.25"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     showgrid="false"
+     inkscape:zoom="2.2332035"
+     inkscape:cx="31.345106"
+     inkscape:cy="118.66362"
+     inkscape:window-width="1920"
+     inkscape:window-height="1029"
+     inkscape:window-x="0"
+     inkscape:window-y="27"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="svg13" />
+  <defs
+     id="defs9">
+    <pattern
+       id="12atpm"
+       patternUnits="userSpaceOnUse"
+       width="16"
+       height="16">
+      <g
+         transform="translate(3,3)"
+         id="g6">
+        <path
+           style="fill:crimson;fill-opacity:1.0;"
+           d="M1 0h1v1h-1zM3 0h1v1h-1zM6 0h1v1h-1zM8 0h1v1h-1zM0 1h2v1h-2zM3 1h1v1h-1zM6 1h1v1h-1zM8 1h2v1h-2zM1 2h3v1h-3zM6 2h3v1h-3zM0 3h2v1h-2zM3 3h4v1h-4zM8 3h2v1h-2zM2 4h1v1h-1zM7 4h1v1h-1zM0 5h1v1h-1zM3 5h1v1h-1zM6 5h1v1h-1zM9 5h1v1h-1zM0 6h1v1h-1zM2 6h6v1h-6zM9 6h1v1h-1zM1 7h1v1h-1zM8 7h1v1h-1zM0 8h1v1h-1zM2 8h1v1h-1zM7 8h1v1h-1zM9 8h1v1h-1zM0 9h1v1h-1zM4 9h2v1h-2zM9 9h1v1h-1z"
+           id="path2" />
+        <path
+           mask="url(#o40n5pdpf1)"
+           style="fill-opacity:1; fill:crimson;"
+           d="M-3 -3h16v16h-16z"
+           id="path4" />
+      </g>
+    </pattern>
+  </defs>
+  <g
+     id="g1972"
+     transform="matrix(6.1875,0,0,6.1875,0.5,0.5)">
+    <path
+       d="M 0,8 C 0,1.6 1.6,0 8,0 c 6.4,0 8,1.6 8,8 0,6.4 -1.6,8 -8,8 C 1.6,16 0,14.4 0,8"
+       fill="url(#12atpm)"
+       id="path11" />
+    <text
+       xml:space="preserve"
+       style="font-size:4.87271px;fill:#ffffff;fill-opacity:1;stroke-width:0.406059"
+       x="1.2659137"
+       y="9.2425413"
+       id="text175"><tspan
+         sodipodi:role="line"
+         id="tspan173"
+         x="1.2659137"
+         y="9.2425413"
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:condensed;font-family:'PT Sans Narrow';-inkscape-font-specification:'PT Sans Narrow Bold Condensed';fill:#ffffff;fill-opacity:1;stroke-width:0.406059">squircle</tspan></text>
+  </g>
+</svg>

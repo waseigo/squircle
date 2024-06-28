@@ -17,9 +17,9 @@ defmodule Squircle.MixProject do
       homepage_url: "https://overbring.com/software/squircle",
       docs: [
         # The main page in the docs
-        main: "squircle",
+        main: "Squircle",
         logo: "./assets/logo.png",
-        assets: "etc/assets",
+        assets: %{"etc/assets" => "assets"},
         extras: ["README.md"]
       ]
     ]
