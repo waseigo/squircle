@@ -18,8 +18,8 @@ defmodule Squircle.MixProject do
       docs: [
         # The main page in the docs
         main: "Squircle",
-        logo: "./assets/logo.png",
-        assets: %{"assets" => "assets"},
+        logo: "./etc/assets/logo.png",
+        assets: %{"etc/assets" => "etc/assets"},
         extras: ["README.md"]
       ]
     ]
