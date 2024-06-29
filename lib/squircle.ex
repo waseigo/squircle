@@ -12,7 +12,7 @@ defmodule Squircle do
   EEx.function_from_string(
     :defp,
     :svg,
-    ~s(<svg xmlns="http://www.w3.org/2000/svg" <%= if type == :image_uri do %>xmlns:xlink="http://www.w3.org/1999/xlink" <% end %>shape-rendering="crispEdges" viewBox="<%= viewbox %>" height="100%" width="100%" version="1.2"><%= content %></svg>),
+    ~s(<svg xmlns="http://www.w3.org/2000/svg" <%= if type == :image_uri do %>xmlns:xlink="http://www.w3.org/1999/xlink" <% end %>shape-rendering="auto" viewBox="<%= viewbox %>" height="100%" width="100%" version="1.2"><%= content %></svg>),
     [:viewbox, :content, :type]
   )
 
