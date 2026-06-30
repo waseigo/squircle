@@ -26,7 +26,7 @@ defmodule Squircle do
   EEx.function_from_string(
     :def,
     :squircle_path,
-    ~s|<path d="<%= d %>" transform="<%= transform %>"<%= if id != "" do %> fill="url(#<%= id %>)"<% end %>/>|,
+    ~s|<path d="<%= d %>"<%= if transform != "" do %> transform="<%= transform %>"<% end %><%= if id != "" do %> fill="url(#<%= id %>)"<% end %>/>|,
     [:d, :transform, :id]
   )
 

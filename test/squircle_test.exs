@@ -51,6 +51,19 @@ defmodule SquircleTest do
     end
   end
 
+  describe "transform attribute" do
+    test "omitted when no padding or rotation" do
+      svg = Squircle.image("test.png", 100)
+      refute svg =~ ~s{transform=""}
+      refute svg =~ ~s{transform=" "}
+    end
+
+    test "present when padding is used" do
+      svg = Squircle.image("test.png", 100, 10)
+      assert svg =~ ~s{transform="}
+    end
+  end
+
   describe "path closure" do
     test "squircle path ends with Z to formally close the path" do
       result = Squircle.create(100, 100, 100, 100, 0.8)
