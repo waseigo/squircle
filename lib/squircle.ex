@@ -33,7 +33,7 @@ defmodule Squircle do
   EEx.function_from_string(
     :def,
     :squircle_path_d,
-    ~s|M0 <%= c(h/2) %>C0 <%= c(arc) %> <%= c(arc) %> 0 <%= c(w/2) %> 0S <%= w %> <%= c(arc) %> <%= w %> <%= c(h/2) %> <%= c(w - arc) %> <%= h %> <%= c(w/2) %> <%= h %> 0 <%= c(h - arc) %> 0 <%= c(h/2) %>|,
+    ~s|M0 <%= c(h/2) %>C0 <%= c(arc) %> <%= c(arc) %> 0 <%= c(w/2) %> 0S <%= w %> <%= c(arc) %> <%= w %> <%= c(h/2) %> <%= c(w - arc) %> <%= h %> <%= c(w/2) %> <%= h %> 0 <%= c(h - arc) %> 0 <%= c(h/2) %>Z|,
     [:w, :h, :arc]
   )
 

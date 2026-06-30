@@ -38,6 +38,18 @@ defmodule SquircleTest do
     end
   end
 
+  describe "path closure" do
+    test "squircle path ends with Z to formally close the path" do
+      result = Squircle.create(100, 100, 100, 100, 0.8)
+      assert String.ends_with?(result.path_d, "Z")
+    end
+
+    test "closing Z is the last character before any trailing whitespace" do
+      result = Squircle.create(50, 100, 60, 110, 0.5)
+      assert result.path_d |> String.trim_trailing() |> String.ends_with?("Z")
+    end
+  end
+
   describe "create curvature bounds" do
     test "rejects curvature > 1" do
       assert_raise FunctionClauseError, fn ->
