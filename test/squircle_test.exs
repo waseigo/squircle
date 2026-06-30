@@ -38,6 +38,19 @@ defmodule SquircleTest do
     end
   end
 
+  describe "svg version" do
+    test "outputs version 1.1" do
+      svg = Squircle.image("test.png", 100)
+      assert svg =~ ~s{version="1.1"}
+      refute svg =~ ~s{version="1.2"}
+    end
+
+    test "wrapper outputs version 1.1" do
+      svg = Squircle.svg_group("<g />", 100)
+      assert svg =~ ~s{version="1.1"}
+    end
+  end
+
   describe "path closure" do
     test "squircle path ends with Z to formally close the path" do
       result = Squircle.create(100, 100, 100, 100, 0.8)
