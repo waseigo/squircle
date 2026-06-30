@@ -51,7 +51,8 @@ defmodule Squircle.MixProject do
   defp deps do
     [
       {:credo, "~> 1.7", only: [:dev, :test], runtime: false},
-      {:ex_doc, "~> 0.40.3", only: :dev, runtime: false, warn_if_outdated: true}
+      {:ex_doc, "~> 0.40.3", only: :dev, runtime: false, warn_if_outdated: true},
+      {:reach, "~> 2.7", only: [:dev], runtime: false}
     ]
   end
 end
