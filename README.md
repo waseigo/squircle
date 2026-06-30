@@ -15,7 +15,7 @@ Add `squircle` to your dependencies in `mix.exs`:
 ```elixir
 def deps do
   [
-    {:squircle, "~> 0.1.1"}
+    {:squircle, "~> 1.0"}
   ]
 end
 ```
