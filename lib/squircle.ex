@@ -73,8 +73,8 @@ defmodule Squircle do
         opts \\ [id: nil]
       )
       when is_number(size) and size > 0 and is_number(padding) and padding >= 0 and
-             is_number(curvature) and is_binary(payload) and type in [:image_uri, :svg_group] and
-             is_list(opts) do
+             is_number(curvature) and curvature >= 0 and curvature <= 1 and is_binary(payload) and
+             type in [:image_uri, :svg_group] and is_list(opts) do
     vsize = size + 2 * padding
     s = create(size, size, vsize, vsize, curvature, 0)
 
@@ -95,19 +95,22 @@ defmodule Squircle do
 
   def image(href, size, padding \\ 0, curvature \\ 0.8, opts \\ [id: nil])
       when is_number(size) and size > 0 and is_number(padding) and padding >= 0 and
-             is_number(curvature) and is_binary(href) and is_list(opts) do
+             is_number(curvature) and curvature >= 0 and curvature <= 1 and is_binary(href) and
+             is_list(opts) do
     wrap(%{type: :image_uri, payload: href}, size, padding, curvature, opts)
   end
 
   def svg_group(svg_g, size, padding \\ 0, curvature \\ 0.8, opts \\ [id: nil])
       when is_number(size) and size > 0 and is_number(padding) and padding >= 0 and
-             is_number(curvature) and is_binary(svg_g) and is_list(opts) do
+             is_number(curvature) and curvature >= 0 and curvature <= 1 and is_binary(svg_g) and
+             is_list(opts) do
     wrap(%{type: :svg_group, payload: svg_g}, size, padding, curvature, opts)
   end
 
   def create(w, h, vw, vh, curvature \\ 0.8, rotate \\ 0)
       when is_number(w) and w > 0 and is_number(h) and h > 0 and is_number(vw) and vw > 0 and
-             is_number(vh) and vh > 0 and is_number(curvature) and is_number(rotate) do
+             is_number(vh) and vh > 0 and is_number(curvature) and curvature >= 0 and
+             curvature <= 1 and is_number(rotate) do
     arc = min(w / 2, h / 2) * (1 - curvature)
     pd = squircle_path_d(w, h, arc)
     pt = squircle_path_transform(w, h, vw, vh, rotate)
