@@ -76,6 +76,67 @@ defmodule SquircleTest do
     end
   end
 
+  describe "image/2 SVG output" do
+    test "returns a complete SVG document" do
+      svg = Squircle.image("https://example.com/img.png", 100)
+      assert String.starts_with?(svg, "<svg")
+      assert String.ends_with?(svg, "</svg>")
+    end
+
+    test "contains image tag inside pattern" do
+      svg = Squircle.image("https://example.com/img.png", 100)
+      assert svg =~ ~r{<image xlink:href="https://example.com/img.png"}
+    end
+
+    test "contains path with pattern fill" do
+      svg = Squircle.image("https://example.com/img.png", 100)
+      assert svg =~ ~r{<path d=".*"}
+      assert svg =~ ~r{fill="url\(#}
+    end
+
+    test "viewbox matches size when no padding" do
+      svg = Squircle.image("test.png", 50)
+      assert svg =~ ~s{viewBox="0 0 50 50"}
+    end
+
+    test "viewbox includes padding" do
+      svg = Squircle.image("test.png", 50, 10)
+      assert svg =~ ~s{viewBox="0 0 70 70"}
+    end
+  end
+
+  describe "svg_group/2 SVG output" do
+    test "embeds the group inside pattern" do
+      svg = Squircle.svg_group(~s{<rect width="40" height="40" fill="red" />}, 100)
+      assert svg =~ ~r{<rect width="40" height="40"}
+    end
+
+    test "returns a complete SVG document" do
+      svg = Squircle.svg_group(~s{<rect width="40" height="40" fill="red" />}, 100)
+      assert String.starts_with?(svg, "<svg")
+      assert String.ends_with?(svg, "</svg>")
+    end
+  end
+
+  describe "create/6 output structure" do
+    test "returns map with expected keys" do
+      result = Squircle.create(100, 100, 100, 100, 0.8)
+      assert Map.has_key?(result, :arc)
+      assert Map.has_key?(result, :path_d)
+      assert Map.has_key?(result, :path_transform)
+      assert Map.has_key?(result, :viewbox)
+    end
+
+    test "arc scales with size and curvature" do
+      r1 = Squircle.create(100, 100, 100, 100, 0)
+      r2 = Squircle.create(100, 100, 100, 100, 0.5)
+      r3 = Squircle.create(100, 100, 100, 100, 1)
+      assert r1.arc > r2.arc
+      assert r2.arc > r3.arc
+      assert r3.arc == 0.0
+    end
+  end
+
   describe "create curvature bounds" do
     test "rejects curvature > 1" do
       assert_raise FunctionClauseError, fn ->
