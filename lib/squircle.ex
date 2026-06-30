@@ -136,6 +136,6 @@ defmodule Squircle do
   defp c(x, _) when is_integer(x), do: x
 
   defp gen_random_string(len \\ 6) when is_integer(len) and len > 0 do
-    for _ <- 1..len, into: "", do: <<Enum.random('0123456789abcdefghijklmnopqrstuvwxyz')>>
+    for _ <- 1..len, into: "", do: <<Enum.random(~c"0123456789abcdefghijklmnopqrstuvwxyz")>>
   end
 end
